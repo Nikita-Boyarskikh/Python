@@ -1,2 +1,2 @@
-# Python-homeworks
-It's stored my python homeworks
+#Домашние здания по програмированию на Python
+Здесь хранятся мои домашние задания по курсу Технопарка "Программирование на Python"
