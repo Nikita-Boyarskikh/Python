@@ -1,16 +1,18 @@
-n=[0,0,0,0,0,0]
-a=b=999
-F=True
-while(b>99 and F):
-	while(a>=b and F):
-		n[0]=(a*b)//100000
-		n[1]=((a*b)-n[0]*100000)//10000
-		n[2]=((a*b)-n[0]*100000-n[1]*10000)//1000
-		n[3]=((a*b)-n[0]*100000-n[1]*10000-n[2]*1000)//100
-		n[4]=((a*b)-n[0]*100000-n[1]*10000-n[2]*1000-n[3]*100)//10
-		n[5]=(a*b)-n[0]*100000-n[1]*10000-n[2]*1000-n[3]*100-n[4]*10
-		if(n[0]==n[5] and n[1]==n[4] and n[2]==n[3]):
-			print(n[0]+10*n[1]+100*n[2]+1000*n[3]+10000*n[4]+100000*n[5])
-			F=False
-		a-=1
-	b-=1
+def Palindrome(left_half):
+	return int(str(left_half) + str(left_half)[::-1])
+
+done=False
+palindrom=0
+left_half=997 #наибольший возможный палиндром, произведение 2-х трёхначных числел (999*999=998001) = 997799
+
+while not done:
+	palindrom=Palindrome(left_half)
+	for i in range(999, 99, -1):
+		if palindrom/i > 999 or i*i < palindrom:
+			break
+		if palindrom %i ==0:
+			done=True
+			break
+	left_half-=1
+
+print(palindrom)
