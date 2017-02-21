@@ -1,0 +1,1 @@
+function summator with arguments: (1, 2, 3, 4, 5) returns 15
